@@ -1,4 +1,4 @@
-# BOTAKBCRYPT
+# BOTAKBCRYPT - Mass Crack Bcrypt Hash Password
 ![BotakBcrypt Mass Crack Bcrypt Hash](https://i.imgur.com/fkkhqIW.png)
 **BOTAKBCRYPT** - Mass Crack Bcrypt Hash Password adalah alat untuk bruteforce massal hash dengan tipe bcrypt (bruteforce with wordlist) menggunakan python3 dan modul passlib.
 
