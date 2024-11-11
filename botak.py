@@ -3,13 +3,15 @@ import time
 import multiprocessing
 import os
 from passlib.hash import bcrypt
-from libs import pingo
 from colored import fg, attr
 
 # Color definitions
 white = attr("bold") + fg("white")
 green = attr("bold") + fg("green")
 error = fg("#FF0000")
+
+# Spin characters for rotation effect
+spin_chars = ["|", "/", "-", "\\"]
 
 def banner():
     os.system('clear')
@@ -33,14 +35,16 @@ def crack_bcrypt(wordlist: str, hash_to_crack: str, result_dict, hash_index) -> 
 
     length = len(words)
     for index, word in enumerate(words):
-        progress = int((index + 1) / length * 100)
-        sys.stdout.write(f"\r{white}{hash_to_crack} {green} -> {white}Processing.. {progress}%")
+        spinner = spin_chars[index % len(spin_chars)]
+        
+        # Display current line number out of total lines in wordlist
+        sys.stdout.write(f"\r{white}{hash_to_crack} {green}{spinner} {white}Attempting word {index + 1} of {length}")
         sys.stdout.flush()
         time.sleep(0.01)
 
         if bcrypt.verify(word, hash_to_crack):
             result_dict[hash_index] = word
-            sys.stdout.write(f"\n{green}{hash_to_crack}: Password '{word}' {attr('reset')}\n")
+            sys.stdout.write(f"{green}{hash_to_crack}: Password '{word}' {attr('reset')}\n")
             return
 
     result_dict[hash_index] = None
