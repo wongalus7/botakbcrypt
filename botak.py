@@ -41,10 +41,10 @@ def crack_bcrypt(wordlist: str, hash_to_crack: str, result_dict, hash_index) -> 
         sys.stdout.write(f"\r{white}{hash_to_crack} {green}{spinner} {white}Attempting word {index + 1} of {length}")
         sys.stdout.flush()
         time.sleep(0.01)
-
+        
         if bcrypt.verify(word, hash_to_crack):
             result_dict[hash_index] = word
-            sys.stdout.write(f"{green}{hash_to_crack}: Password '{word}' {attr('reset')}\n")
+            sys.stdout.write(f"\r\n{green}{hash_to_crack}: Password '{word}' {attr('reset')}")
             return
 
     result_dict[hash_index] = None
