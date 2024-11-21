@@ -1,9 +1,10 @@
 # BOTAKBCRYPT - Mass Crack Bcrypt Hash Password
-![BotakBcrypt Mass Crack Bcrypt Hash](https://i.imgur.com/b5OQVwP.png)
+![BotakBcrypt Mass Crack Bcrypt Hash](https://i.imgur.com/mYKgWxv.png)
 **BOTAKBCRYPT** - Mass Crack Bcrypt Hash Password adalah alat untuk bruteforce massal hash dengan tipe bcrypt (bruteforce with wordlist) menggunakan python3 dan modul passlib.
 
 ## Fitur
-- Bruteforce massal bcrypt (bcrypt1|bcrypt2|bcrypt3)
+- Bruteforce massal bcrypt (bcrypt1|bcrypt2|bcrypt3)+
+- Custom word to create simple wordlist with special chars (eg: admin@123, admin#11, admin@2024 etc)
 - Wordlist default: wordy.txt (edit if u want.)
 
 ## Requirements
