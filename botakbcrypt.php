@@ -86,8 +86,8 @@ if ($hashes_input && $base_words_input && is_numeric($process_count_input) && $p
     }
 
     # Include additional wordlist from file
-    if (file_exists("wordlist.txt")) {
-        $file_wordlist = file("wordlist.txt", FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+    if (file_exists("wordy.txt")) {
+        $file_wordlist = file("wordy.txt", FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
         $file_wordlist = filter_special_characters($file_wordlist);
         $wordlist = array_merge($wordlist, $file_wordlist);
     }
